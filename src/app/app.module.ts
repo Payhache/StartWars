@@ -14,6 +14,7 @@ import { AddVaisseauComponent } from './components/add-vaisseau/add-vaisseau.com
 import { FormsModule } from '@angular/forms';
 import { AddPlanetComponent } from './components/add-planet/add-planet.component';
 import { ToastrModule } from 'ngx-toastr';
+import { FirstLetterPipe } from './pipes/first-letter.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ToastrModule } from 'ngx-toastr';
     VaisseauDetailComponent,
     AddPlanetComponent,
     AddVaisseauComponent,
+    FirstLetterPipe,
   ],
 
   imports: [
