@@ -17,8 +17,12 @@
       <td>{{ planet.allegiance }}</td>
       <td>{{ planet.nbKmTerre }}</td>
       <td>
-        <a [routerLink]="['/planets', planet.id]">
-          voir le détail de la planéte {{ planet.nom }}</a>
+        <a class="badge badge-info"[routerLink]="['/planets', planet.id]">
+          voir le détail de la planéte {{ planet.nom }}</a> 
+          <a class="badge badge-secondary"[routerLink]="['/planet/update', planet.id]"> Modifier la planète</a>
+
+          <a class="badge badge-danger"(click)="askRemovePlanet(planet)"> Supprimer la planète {{ planet.nom }} </a>
+
       </td>
       <!-- URL, suivit du modificateur dynamique -->
       <!-- Ici l'ID de la planete selectionnée -->
@@ -29,5 +33,3 @@
 <a routerLink="/planets/add" class="btn btn-primary">
   ajouter une planete</a>
 
-  <br>
-  {{planets | json}}

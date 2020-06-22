@@ -16,7 +16,10 @@
         <td>{{ vaisseau.model }}</td>
         <td>{{ vaisseau.lightSpeed?'oui':'non' }}</td>
         <td>{{ vaisseau.nbPassenger }}</td>
-        <td> <a [routerLink]="['/vaisseaux', vaisseau.id]">Voir de détail du Vaisseau</a></td>
+        <td> <a class="badge badge-info"[routerLink]="['/vaisseau', vaisseau.id]">Voir de détail du Vaisseau</a>
+          <a class="badge badge-secondary"[routerLink]="['/vaisseau/update', vaisseau .id]"> Modifier {{vaisseau.nom }} </a>
+              <a class="badge badge-danger"(click)="askRemoveShip(vaisseau)"> Supprimer Vaisseau </a>
+        </td>
       </tr>
     </tbody>
   </table>

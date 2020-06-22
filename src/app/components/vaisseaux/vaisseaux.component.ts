@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VaisseauService} from '../../services/vaisseau.service';
 import { Vaisseau} from '../../models/vaisseau';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-vaisseaux',
@@ -10,10 +11,13 @@ import { Vaisseau} from '../../models/vaisseau';
 export class VaisseauxComponent implements OnInit {
  vaisseau:Vaisseau[];
 
-  constructor(private vaisseauService: VaisseauService) { };
+  constructor(private vaisseauService: VaisseauService, private toastr: ToastrService) { };
 
   ngOnInit(): void {
     this.vaisseau = this.vaisseauService.getAllVehiculs();
   }
-
+  askRemoveShip(vaisseau: Vaisseau):void {
+    this.vaisseau = this.vaisseauService.removeVaisseau(vaisseau);
+    this.toastr.success('','Vaisseau supprimé');
+  }
 }

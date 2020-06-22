@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LogLoaderService } from 'src/app/services/log-loader.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
  date = new Date();
  user = 'Pierre Henri';
-  constructor() { }
+
+
+  constructor(public logLoaderService: LogLoaderService) { }
 
   ngOnInit(): void {
+    this.logLoaderService.welcomeMsg();
   }
 
 }

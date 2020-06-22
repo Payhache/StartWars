@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PlanetService} from '../../services/planet.service';
 import {Planet} from '../../models/planet';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -10,10 +11,14 @@ import {Planet} from '../../models/planet';
 })
 export class PlanettesComponent implements OnInit {
   planets:Planet[];
-  constructor(private planetService: PlanetService) { }
+
+  constructor(private planetService: PlanetService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.planets = this.planetService.getAllPlanets();
   }
-
+  askRemovePlanet(planet:Planet):void {
+    this.planets = this.planetService.removePlanet(planet);
+    this.toastr.success('','Planète supprimée');
+  }
 }

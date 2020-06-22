@@ -22,4 +22,8 @@ export class VaisseauService {
   addVaisseau(vehicul: Vaisseau): void {
     this.vehiculs.push(vehicul);
   }
+  removeVaisseau(vaisseau: Vaisseau){
+    this.vehiculs = this.vehiculs.filter(vaisseauToRemove => vaisseauToRemove !== vaisseau );
+    return this.vehiculs;
+  }
 }

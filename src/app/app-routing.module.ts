@@ -12,6 +12,8 @@ import { PlanettesComponent } from '../../src/app/components/planettes/planettes
 import { PlanetDetailComponent } from './components/planet-detail/planet-detail.component';
 import { AddPlanetComponent } from './components/add-planet/add-planet.component';
 import { AddVaisseauComponent } from './components/add-vaisseau/add-vaisseau.component';
+import { EditPlanetComponent } from './components/edit-planet/edit-planet.component';
+import { EditVaisseauComponent } from './components/edit-vaisseau/edit-vaisseau.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,9 +21,11 @@ const routes: Routes = [
   { path: 'planets', component: PlanettesComponent },
   { path: 'planets/add', component: AddPlanetComponent },
   { path: 'planets/:id', component: PlanetDetailComponent },
+  { path: 'planet/update/:id', component: EditPlanetComponent },
   { path: 'vaisseaux', component: VaisseauxComponent },
   { path: 'vaisseau/add', component: AddVaisseauComponent },
-  { path: 'vaisseaux/:id', component: VaisseauDetailComponent },
+  { path: 'vaisseau/:id', component: VaisseauDetailComponent },
+  { path: 'vaisseau/update/:id', component: EditVaisseauComponent },
 ];
 
 @NgModule({

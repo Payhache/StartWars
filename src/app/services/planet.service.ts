@@ -19,4 +19,8 @@ export class PlanetService {
   addPlanet(planet: Planet):void {
     this.planets.push(planet);
   }
+ removePlanet(planet:Planet) {
+   this.planets = this.planets.filter(planetToRemove => (planetToRemove !== planet));
+   return this.planets;
+ }
 }

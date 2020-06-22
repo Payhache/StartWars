@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Ajoutons Un vaisseau !!</h1>
+    
+    <form #vaisseauForm="ngForm" (ngSubmit)="submitModification()">
+        <label for="nom">{{vaisseau.nom?vaisseau.nom:"nom du vaisseau"}}</label>
+        <input type="text" class="form-control" id="nom" name="nom" required [(ngModel)]="vaisseau.nom" #nom="ngModel">
+        <div [hidden]="nom.valid"
+            class="alert alert-danger">
+            votre vaisseau doit posséder un nom
+        </div>
+        <label for="constructeur">Constructeur du vaisseau</label>
+        <input type="string" class="form-control" id="constructeur" name="constructeur" required [(ngModel)]="vaisseau.model" #constructeur="ngModel">
+        <div [hidden]="constructeur.valid"
+            class="alert alert-danger">
+            vous devez renseigner le nombre d'habitant
+        </div>
+        <label for="nbpassenger">Nombre de passagers que le vaisseau peut transporter</label>
+        <input type="number" class="form-control" id="nbpassenger" name="nbpassenger" required [(ngModel)]="vaisseau.nbPassenger" #nbpassenger="ngModel">
+        <div [hidden]="nbpassenger.valid"
+            class="alert alert-danger">
+            vous devez renseigner le nobre de passager qu'il peut transporter.
+        </div>
+        <input type="submit" [disabled]="!vaisseauForm.valid">
+    </form>
+</div>
+

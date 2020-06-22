@@ -15,6 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { AddPlanetComponent } from './components/add-planet/add-planet.component';
 import { ToastrModule } from 'ngx-toastr';
 import { FirstLetterPipe } from './pipes/first-letter.pipe';
+import { EditPlanetComponent } from './components/edit-planet/edit-planet.component';
+import { EditVaisseauComponent } from './components/edit-vaisseau/edit-vaisseau.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { FirstLetterPipe } from './pipes/first-letter.pipe';
     AddPlanetComponent,
     AddVaisseauComponent,
     FirstLetterPipe,
+    EditPlanetComponent,
+    EditVaisseauComponent,
   ],
 
   imports: [
