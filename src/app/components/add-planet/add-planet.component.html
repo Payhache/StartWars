@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>Ajoutons une planète !</h1>
+    
+    <form #planetFrom="ngForm" (ngSubmit)="submitPlanet()">
+    
+        <label for="id">Id de la planète</label>
+        <input type="number" class="form-control" id="id" name="id" required [(ngModel)]="planet.id" #id="ngModel">
+        <div [hidden]="id.valid"
+            class="alert alert-danger">
+            L'id est obligatoire
+        </div>
+        <label for="nom">Nom de la planète</label>
+        <input type="text" class="form-control" id="nom" name="nom" required [(ngModel)]="planet.nom" #nom="ngModel">
+        <div [hidden]="nom.valid"
+            class="alert alert-danger">
+            votre planète doit posséder un nom
+        </div>
+        <label for="nbHabitant">Nombre d'habitants sur la planète</label>
+        <input type="number" class="form-control" id="nbHabitant" name="nbHabitant" required [(ngModel)]="planet.nbHabitant" #nbHabitant="ngModel">
+        <div [hidden]="nbHabitant.valid"
+            class="alert alert-danger">
+            vous devez renseigner le nombre d'habitant
+        </div>
+        <label for="nbkm">Distance de la terre en Km</label>
+        <input type="number" class="form-control" id="nbkm" name="nbkm" required [(ngModel)]="planet.nbKmTerre" #nbkm="ngModel">
+        <div [hidden]="nbkm.valid"
+            class="alert alert-danger">
+            vous devez renseigner la distance qui sépare votre planète de la terre.
+        </div>
+    
+        <input type="submit" [disabled]="!planetFrom.valid">
+    </form>
+</div>

@@ -1,0 +1,26 @@
+<h2>Les différents vaisseaux du monde de Star Wars</h2>
+
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+        <th>photo</th>
+      <th>Nom</th>
+      <th>Model</th>
+      <th>Plus rapide que la lumière</th>
+      <th>Nombre de passagers</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vaisseau of this.vaisseau">
+        <td><img src="assets/{{vaisseau.img}}" width="150px" alt=""/></td>
+        <td>{{ vaisseau.nom }}</td>
+        <td>{{ vaisseau.model }}</td>
+        <td>{{ vaisseau.lightSpeed?'oui':'non' }}</td>
+        <td>{{ vaisseau.nbPassenger }}</td>
+        <td> <a [routerLink]="['/vaisseaux', vaisseau.id]">Voir de détail du Vaisseau</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <a routerLink="/vaisseau/add" class="btn btn-primary">
+    ajouter un vaisseau</a>
+  
+ 

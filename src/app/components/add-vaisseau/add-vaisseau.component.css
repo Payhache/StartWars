@@ -1,0 +1,17 @@
+.container {
+    background-color: lightgray;
+    padding: 2rem;
+}
+
+
+form {
+    width: 60%;
+    margin: auto;
+}
+
+label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
