@@ -14,7 +14,10 @@ export class VaisseauxComponent implements OnInit {
   constructor(private vaisseauService: VaisseauService, private toastr: ToastrService) { };
 
   ngOnInit(): void {
-    this.vaisseau = this.vaisseauService.getAllVehiculs();
+    this.vaisseauService.getVaisseau().subscribe((data: Vaisseau[]) => {
+      this.vaisseau = data;
+      });
+  
   }
   askRemoveShip(vaisseau: Vaisseau):void {
     this.vaisseau = this.vaisseauService.removeVaisseau(vaisseau);

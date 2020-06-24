@@ -4,18 +4,17 @@
     <thead class="thead-dark">
         <th>photo</th>
       <th>Nom</th>
-      <th>Model</th>
-      <th>Plus rapide que la lumière</th>
-      <th>Nombre de passagers</th>
+      <th>Nombre Passager</th>
+     
+      <th>Description</th>
       <th>Action</th>
     </thead>
     <tbody>
       <tr *ngFor="let vaisseau of this.vaisseau">
-        <td><img src="assets/{{vaisseau.img}}" width="150px" alt=""/></td>
+        <td><img src="{{vaisseau.img}}" width="150px" alt=""/></td>
         <td>{{ vaisseau.nom }}</td>
-        <td>{{ vaisseau.model }}</td>
-        <td>{{ vaisseau.lightSpeed?'oui':'non' }}</td>
         <td>{{ vaisseau.nbPassenger }}</td>
+        <td>{{ vaisseau.description }}</td>
         <td> <a class="badge badge-info"[routerLink]="['/vaisseau', vaisseau.id]">Voir de détail du Vaisseau</a>
           <a class="badge badge-secondary"[routerLink]="['/vaisseau/update', vaisseau .id]"> Modifier {{vaisseau.nom }} </a>
               <a class="badge badge-danger"(click)="askRemoveShip(vaisseau)"> Supprimer Vaisseau </a>
